@@ -59,16 +59,4 @@ while True:
         clas_list = Class.objects.get(c_num = clas_num)
         if clas_list:
             new_stud = Student.objects.create(f_name = stud_name, c_num = clas_list)
-    elif user == "5":
-        n_day = input("Введи день тижня: ")
-        n_begining = input("Введи час: ")
-        sub_name = input("Назву предмета: ")
-        clas_num = int(input("Введи клас: "))
-        teach_name = input("Прізвище вчителя: ")
-        
-        sub_list = Subject.objects.get(s_name = sub_name)
-        clas_list = Class.objects.get(c_num = clas_num)
-        teach_list = Teacher.objects.get(l_name = teach_name)
-        if sub_list and clas_list and teach_list:
-            new_shed = Shedule.objects.create(day=n_day, begining = n_begining, s_name=sub_list, c_num = clas_list, l_name = teach_list)
         
