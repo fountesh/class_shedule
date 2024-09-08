@@ -27,3 +27,22 @@ class Student(models.Model):
 
     def __str__(self):
         return self.f_name
+
+class Shedule(models.Model):
+    day = models.CharField(max_length=100, choices=[("Monday", "Monday"), ("Tuesday", "Tuesday"), ("Wednesday", "Wednesday"), ("Thursday", "Thursday"), ("Friday", "Friday")])
+    begining = models.TimeField()
+    s_name = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    c_num = models.ForeignKey(Class, on_delete=models.DO_NOTHING)
+    l_name = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
+
+    def __str__(self) -> str:
+        return f"{self.day}: {self.begining}"
+
+class Grade(models.Model):
+    f_name = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    s_name = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+    grade = models.IntegerField()
+    date = models.DateField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.f_name}: grade is {self.grade},"
