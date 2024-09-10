@@ -90,4 +90,5 @@ while True:
         sub_list = Subject.objects.get(s_name = sub_name)
         if f_name_list and sub_list:
             new_grade = Grade.objects.create(f_name = f_name_list, s_name = sub_list, grade = n_grade)
+            print("Успішно створено!")
         
