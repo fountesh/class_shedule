@@ -35,7 +35,7 @@ class Shedule(models.Model):
     c_num = models.ForeignKey(Class, on_delete=models.DO_NOTHING)
     l_name = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.day}: {self.begining}"
 
 class Grade(models.Model):
@@ -44,5 +44,5 @@ class Grade(models.Model):
     grade = models.IntegerField()
     date = models.DateField(auto_now_add=True)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return f"{self.f_name}: grade is {self.grade},"
